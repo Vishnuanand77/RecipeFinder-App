@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="170dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
+        android:layout_width="380dp"
         android:layout_height="150dp"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,31 +19,34 @@
 
             <TextView
                 android:id="@+id/recipeIngredients"
-                android:layout_width="209dp"
-                android:layout_height="72dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="214dp"
+                android:layout_height="74dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:forceHasOverlappingRendering="false"
                 android:text="Ingredients"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.153"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/recipeThumbnail"
                 app:layout_constraintTop_toBottomOf="@+id/recipeTitle" />
 
             <TextView
                 android:id="@+id/recipeTitle"
-                android:layout_width="97dp"
+                android:layout_width="wrap_content"
                 android:layout_height="24dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
                 android:text="Recipe Title"
                 android:textAlignment="textStart"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/recipeThumbnail"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/recipeThumbnail"
-                android:layout_width="120dp"
+                android:layout_width="150dp"
                 android:layout_height="150dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -52,14 +55,13 @@
 
             <Button
                 android:id="@+id/recipeLinkButton"
-                android:layout_width="119dp"
+                android:layout_width="wrap_content"
                 android:layout_height="38dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="4dp"
-                app:icon="@android:drawable/ic_menu_share"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                tools:text="Link" />
+                tools:text="@string/LinkButton" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
