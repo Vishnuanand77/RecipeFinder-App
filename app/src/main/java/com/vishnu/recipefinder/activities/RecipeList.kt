@@ -3,6 +3,7 @@ package com.vishnu.recipefinder.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -12,6 +13,7 @@ import com.android.volley.toolbox.Volley
 import com.vishnu.recipefinder.R
 import com.vishnu.recipefinder.data.RecipeListAdapter
 import com.vishnu.recipefinder.model.Recipe
+import kotlinx.android.synthetic.main.activity_recipe_list.*
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -19,7 +21,7 @@ class RecipeList : AppCompatActivity() {
     var volleyRequest: RequestQueue? = null //Initializing a request queue variable
     var recipeList: ArrayList<Recipe>? = null //Initializing array list variable
     var recipeListAdapter: RecipeListAdapter? = null //Adapter
-    var layoutManager: RecyclerView.LayoutManager? = null //LayoutManager
+//    var layoutManager: RecyclerView.LayoutManager? = null //LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,10 +55,15 @@ class RecipeList : AppCompatActivity() {
                             Log.d("Response ===>", recipe.title.toString())
                             recipeList!!.add(recipe)
 
-                            //Instantiating RecipeListAdapter
+//                            Instantiating RecipeListAdapter
                             recipeListAdapter = RecipeListAdapter(recipeList!!, this)
+//                            layoutManager = LinearLayoutManager(this)
 
+                            //RecyclerView setup
+                            recyclerViewId.layoutManager = LinearLayoutManager(this)
+                            recyclerViewId.adapter = recipeListAdapter
                         }
+                        recipeListAdapter!!.notifyDataSetChanged()
                     } catch (e: JSONException) {e.printStackTrace()}
             }, //Response.Listener
             {
