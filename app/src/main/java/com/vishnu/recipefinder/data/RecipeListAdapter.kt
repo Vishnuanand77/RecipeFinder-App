@@ -14,6 +14,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.vishnu.recipefinder.R
+import com.vishnu.recipefinder.activities.ShowLinkActivity
 import com.vishnu.recipefinder.model.Recipe
 
 class RecipeListAdapter(private val list: ArrayList<Recipe>, private val context: Context):
@@ -58,7 +59,7 @@ class RecipeListAdapter(private val list: ArrayList<Recipe>, private val context
 
             //Link Button onClick
             linkButton.setOnClickListener {
-                
+                var intent = Intent(context, ShowLinkActivity::class.java)
             }
 
             //Card View onClick
