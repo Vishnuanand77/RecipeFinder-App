@@ -4,36 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFD600"
+    android:elevation="30dp"
     tools:context=".activities.MainActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="323dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="64dp"
-        android:text="@string/Title"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:typeface="sans"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="333dp"
-        android:layout_height="198dp"
-        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:elevation="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:text="@string/Title"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:typeface="sans" />
 
             <EditText
                 android:id="@+id/ingredientsEditText"
@@ -52,17 +51,16 @@
                 android:ems="10"
                 android:hint="@string/SearchHint"
                 android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/searchButton"
+                android:layout_width="223dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/searchButton" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/searchButton"
-        android:layout_width="223dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="52dp"
-        android:text="@string/searchButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

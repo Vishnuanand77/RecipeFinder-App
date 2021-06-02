@@ -5,4 +5,7 @@
     <string name="SearchHint">Search term: e.g: Lasagna etc</string>
     <string name="searchButton">Search Recipe</string>
     <string name="LinkButton">Link</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="recipe_title">Recipe Title</string>
+    <string name="contentDescription">Food item image</string>
 </resources>
