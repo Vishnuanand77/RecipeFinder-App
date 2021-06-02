@@ -1,6 +1,7 @@
 package com.vishnu.recipefinder.data
 
 import android.content.Context
+import android.content.Intent
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.vishnu.recipefinder.R
@@ -35,6 +38,7 @@ class RecipeListAdapter(private val list: ArrayList<Recipe>, private val context
         var title: TextView = itemView.findViewById<TextView>(R.id.recipeTitle)
         var ingredients: TextView = itemView.findViewById<TextView>(R.id.recipeIngredients)
         var linkButton: Button = itemView.findViewById<Button>(R.id.recipeLinkButton)
+        var cardView: CardView = itemView.findViewById<CardView>(R.id.cardViewId)
 
         fun bindView(recipe: Recipe) {
             if (!TextUtils.isEmpty(recipe.thumbnail)) {
@@ -54,8 +58,14 @@ class RecipeListAdapter(private val list: ArrayList<Recipe>, private val context
 
             //Link Button onClick
             linkButton.setOnClickListener {
-                TODO("IMPLEMENT LINK OPEN WITH BROWSER FUNCTIONS")
+                
             }
+
+            //Card View onClick
+            cardView.setOnClickListener {
+                Toast.makeText(context, "CardView click works!", Toast.LENGTH_SHORT).show()
+            }
+            
         }
     }
 }
