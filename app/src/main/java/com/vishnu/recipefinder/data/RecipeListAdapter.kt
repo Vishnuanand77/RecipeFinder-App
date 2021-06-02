@@ -4,6 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.vishnu.recipefinder.R
@@ -26,6 +28,13 @@ class RecipeListAdapter(private val list: ArrayList<Recipe>, private val context
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+        //Widget Initializations
+        var thumbnail = itemView.findViewById<ImageView>(R.id.recipeThumbnail)
+        var title = itemView.findViewById<TextView>(R.id.recipeTitle)
+        var ingredients = itemView.findViewById<TextView>(R.id.recipeIngredients)
 
+        fun bindView(recipe: Recipe) {
+
+        }
     }
 }
