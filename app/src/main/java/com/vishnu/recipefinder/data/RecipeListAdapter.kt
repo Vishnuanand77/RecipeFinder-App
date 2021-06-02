@@ -22,7 +22,7 @@ class RecipeListAdapter(private val list: ArrayList<Recipe>, private val context
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bindView(list[position])
     }
 
     override fun getItemCount(): Int {
@@ -31,10 +31,10 @@ class RecipeListAdapter(private val list: ArrayList<Recipe>, private val context
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         //Widget Initializations
-        var thumbnail = itemView.findViewById<ImageView>(R.id.recipeThumbnail)
-        var title = itemView.findViewById<TextView>(R.id.recipeTitle)
-        var ingredients = itemView.findViewById<TextView>(R.id.recipeIngredients)
-        var linkButton = itemView.findViewById<Button>(R.id.recipeLinkButton)
+        var thumbnail: ImageView = itemView.findViewById<ImageView>(R.id.recipeThumbnail)
+        var title: TextView = itemView.findViewById<TextView>(R.id.recipeTitle)
+        var ingredients: TextView = itemView.findViewById<TextView>(R.id.recipeIngredients)
+        var linkButton: Button = itemView.findViewById<Button>(R.id.recipeLinkButton)
 
         fun bindView(recipe: Recipe) {
             if (!TextUtils.isEmpty(recipe.thumbnail)) {
