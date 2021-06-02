@@ -6,10 +6,8 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
@@ -35,11 +33,10 @@ class RecipeListAdapter(private val list: ArrayList<Recipe>, private val context
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         //Widget Initializations
-        var thumbnail: ImageView = itemView.findViewById<ImageView>(R.id.recipeThumbnail)
-        var title: TextView = itemView.findViewById<TextView>(R.id.recipeTitle)
-        var ingredients: TextView = itemView.findViewById<TextView>(R.id.recipeIngredients)
-        //var linkButton: Button = itemView.findViewById<Button>(R.id.recipeLinkButton)
-        var cardView: CardView = itemView.findViewById<CardView>(R.id.cardViewId)
+        private var thumbnail: ImageView = itemView.findViewById(R.id.recipeThumbnail)
+        private var title: TextView = itemView.findViewById(R.id.recipeTitle)
+        private var ingredients: TextView = itemView.findViewById(R.id.recipeIngredients)
+        private var cardView: CardView = itemView.findViewById(R.id.cardViewId)
 
         fun bindView(recipe: Recipe) {
             if (!TextUtils.isEmpty(recipe.thumbnail)) {

@@ -21,10 +21,10 @@ import org.json.JSONException
 import org.json.JSONObject
 
 class RecipeList : AppCompatActivity() {
-    var volleyRequest: RequestQueue? = null //Initializing a request queue variable
-    var recipeList: ArrayList<Recipe>? = null //Initializing array list variable
-    var recipeListAdapter: RecipeListAdapter? = null //Adapter
-    var layoutManager: RecyclerView.LayoutManager? = null //LayoutManager
+    private var volleyRequest: RequestQueue? = null //Initializing a request queue variable
+    private var recipeList: ArrayList<Recipe>? = null //Initializing array list variable
+    private var recipeListAdapter: RecipeListAdapter? = null //Adapter
+    private var layoutManager: RecyclerView.LayoutManager? = null //LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +51,7 @@ class RecipeList : AppCompatActivity() {
         }
 
         volleyRequest = Volley.newRequestQueue(this) //Assigning a new request queue
-        recipeList = ArrayList<Recipe>() //Array list
+        recipeList = ArrayList() //Array list
 
         //Function call to get recipes from API
         getRecipe(url)
