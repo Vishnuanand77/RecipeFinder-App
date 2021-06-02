@@ -3,6 +3,7 @@ package com.vishnu.recipefinder.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -36,13 +37,14 @@ class RecipeList : AppCompatActivity() {
         val ingredientsCheck = extras?.get("ingredients")
         val searchCheck = extras?.get("search")
 
-        if (ingredientsCheck!! == "" && searchCheck!! == "") {
+        if (ingredientsCheck!!.equals("") && searchCheck!!.equals("")) {
             //Construct customized Url
-            val tempUrl = LEFT_LINK + "ingredientsCheck" + QUERY + searchCheck
+            val tempUrl = LEFT_LINK + ingredientsCheck.toString() + QUERY + searchCheck.toString()
             url = tempUrl
-            Log.d("TEMP URL ===>", tempUrl)
+            Log.d("TEMP URL ===>", url)
         } else {
             url = "http://www.recipepuppy.com/api"
+            Toast.makeText(this, "Displaying Default Recipes", Toast.LENGTH_SHORT).show()
         }
 
         volleyRequest = Volley.newRequestQueue(this) //Assigning a new request queue
