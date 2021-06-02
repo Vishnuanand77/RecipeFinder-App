@@ -1,6 +1,6 @@
 <h1>Recipe Finder App </h1>
-- A Recipe Finder app built using Kotlin
-- Interacts with a public API to retrieve JSON objects
+- A Recipe Finder app built using Kotlin \n
+- Interacts with a public API to retrieve JSON objects \n
 - The JSON recipe objects have 4 properties : 
     - Title 
     - A link to the recipe website
