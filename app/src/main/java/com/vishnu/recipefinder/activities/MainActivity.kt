@@ -3,6 +3,7 @@ package com.vishnu.recipefinder.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.vishnu.recipefinder.R
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -20,6 +21,9 @@ class MainActivity : AppCompatActivity() {
 
             intent.putExtra("ingredients", ingredients)
             intent.putExtra("search", searchTerm)
+
+            Log.d("Ingredients ===> ", ingredients)
+            Log.d("SearchTerm ===> ", searchTerm)
 
             startActivity(intent)
         }
