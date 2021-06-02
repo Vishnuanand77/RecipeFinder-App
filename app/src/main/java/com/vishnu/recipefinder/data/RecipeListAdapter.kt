@@ -38,7 +38,7 @@ class RecipeListAdapter(private val list: ArrayList<Recipe>, private val context
         var thumbnail: ImageView = itemView.findViewById<ImageView>(R.id.recipeThumbnail)
         var title: TextView = itemView.findViewById<TextView>(R.id.recipeTitle)
         var ingredients: TextView = itemView.findViewById<TextView>(R.id.recipeIngredients)
-        var linkButton: Button = itemView.findViewById<Button>(R.id.recipeLinkButton)
+        //var linkButton: Button = itemView.findViewById<Button>(R.id.recipeLinkButton)
         var cardView: CardView = itemView.findViewById<CardView>(R.id.cardViewId)
 
         fun bindView(recipe: Recipe) {
@@ -58,17 +58,23 @@ class RecipeListAdapter(private val list: ArrayList<Recipe>, private val context
             ingredients.text = recipe.ingredients
 
             //Link Button onClick
-            linkButton.setOnClickListener {
+//            linkButton.setOnClickListener {
+//                val intent = Intent(context, ShowLinkActivity::class.java)
+//                intent.putExtra("link", recipe.link.toString()) //Forwarding the recipe url
+//
+//                //Starting a WebView
+//                context.startActivity(intent)
+//            }
+
+            //Card View onClick
+            cardView.setOnClickListener {
                 val intent = Intent(context, ShowLinkActivity::class.java)
                 intent.putExtra("link", recipe.link.toString()) //Forwarding the recipe url
 
                 //Starting a WebView
                 context.startActivity(intent)
-            }
 
-            //Card View onClick
-            cardView.setOnClickListener {
-                Toast.makeText(context, "CardView click works!", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context, "CardView click works!", Toast.LENGTH_SHORT).show()
             }
             
         }

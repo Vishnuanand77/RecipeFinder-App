@@ -22,17 +22,19 @@
 
             <TextView
                 android:id="@+id/recipeIngredients"
-                android:layout_width="214dp"
-                android:layout_height="74dp"
+                android:layout_width="211dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="2dp"
                 android:forceHasOverlappingRendering="false"
                 android:text="Ingredients"
                 android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/recipeThumbnail"
-                app:layout_constraintTop_toBottomOf="@+id/recipeTitle" />
+                app:layout_constraintTop_toBottomOf="@+id/recipeTitle"
+                app:layout_constraintVertical_bias="0.076" />
 
             <TextView
                 android:id="@+id/recipeTitle"
@@ -56,15 +58,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@mipmap/ic_launcher" />
 
-            <Button
-                android:id="@+id/recipeLinkButton"
-                android:layout_width="wrap_content"
-                android:layout_height="38dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:text="@string/LinkButton" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
