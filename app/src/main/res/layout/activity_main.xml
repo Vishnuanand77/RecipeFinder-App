@@ -11,10 +11,10 @@
         android:id="@+id/cardView"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/cardview"
-        app:cardElevation="50dp"
         app:cardCornerRadius="20dp"
+        app:cardElevation="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +25,17 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Recipe Finder"
+                android:textAlignment="center"
+                android:textSize="34sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView"
