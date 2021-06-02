@@ -5,10 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="170dp">
 
+<!--TODO: Make the cards rounded-->
     <androidx.cardview.widget.CardView
         android:layout_width="380dp"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

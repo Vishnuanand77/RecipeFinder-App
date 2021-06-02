@@ -46,11 +46,16 @@ class RecipeList : AppCompatActivity() {
                         for (i in 0 until resultArray.length() -1) {
                             val recipeObject = resultArray.getJSONObject(i)
 
+                            val title = recipeObject.getString("title")
+                            val link = recipeObject.getString("href")
+                            val thumbnail = recipeObject.getString("thumbnail")
+                            val ingredients = recipeObject.getString("ingredients")
+
                             val recipe = Recipe()
-                            recipe.title = recipeObject.getString("title")
-                            recipe.link = recipeObject.getString("href")
-                            recipe.ingredients = recipeObject.getString("ingredients")
-                            recipe.thumbnail = recipeObject.getString("thumbnail")
+                            recipe.title = title
+                            recipe.link = link
+                            recipe.ingredients = "Ingredients: $ingredients"
+                            recipe.thumbnail = thumbnail
 
                             Log.d("Response ===>", recipe.title.toString())
                             recipeList!!.add(recipe)
