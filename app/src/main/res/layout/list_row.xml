@@ -11,7 +11,7 @@
         android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        app:cardCornerRadius="@dimen/cardview_default_radius"
+        app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

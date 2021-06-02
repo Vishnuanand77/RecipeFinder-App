@@ -5,15 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFD600"
-    android:elevation="30dp"
     tools:context=".activities.MainActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="333dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:elevation="80dp"
+        android:layout_marginTop="150dp"
+        app:elevation="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -28,6 +29,7 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/Title"
                 android:textAlignment="center"
                 android:textSize="20sp"
@@ -36,7 +38,7 @@
 
             <EditText
                 android:id="@+id/ingredientsEditText"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:ems="10"
@@ -45,7 +47,7 @@
 
             <EditText
                 android:id="@+id/searchTermEditText"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:ems="10"
@@ -56,7 +58,7 @@
                 android:id="@+id/searchButton"
                 android:layout_width="223dp"
                 android:layout_height="46dp"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="20dp"
                 android:text="@string/searchButton" />
         </LinearLayout>
