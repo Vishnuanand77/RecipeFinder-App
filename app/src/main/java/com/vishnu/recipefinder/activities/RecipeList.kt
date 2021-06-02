@@ -12,6 +12,8 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.vishnu.recipefinder.R
 import com.vishnu.recipefinder.data.RecipeListAdapter
+import com.vishnu.recipefinder.model.LEFT_LINK
+import com.vishnu.recipefinder.model.QUERY
 import com.vishnu.recipefinder.model.Recipe
 import kotlinx.android.synthetic.main.activity_recipe_list.*
 import org.json.JSONException
@@ -28,12 +30,26 @@ class RecipeList : AppCompatActivity() {
         setContentView(R.layout.activity_recipe_list)
 
         //API URL String
-        val urlString = "http://www.recipepuppy.com/api"
+        val url: String?
+
+        val extras = intent.extras //Getting information from the previous page
+        val ingredientsCheck = extras?.get("ingredients")
+        val searchCheck = extras?.get("search")
+
+        if (ingredientsCheck!! == "" && searchCheck!! == "") {
+            //Construct customized Url
+            val tempUrl = LEFT_LINK + "ingredientsCheck" + QUERY + searchCheck
+            url = tempUrl
+            Log.d("TEMP URL ===>", tempUrl)
+        } else {
+            url = "http://www.recipepuppy.com/api"
+        }
+
         volleyRequest = Volley.newRequestQueue(this) //Assigning a new request queue
         recipeList = ArrayList<Recipe>() //Array list
 
         //Function call to get recipes from API
-        getRecipe(urlString)
+        getRecipe(url)
     }
 
     private fun getRecipe(Url: String) {
