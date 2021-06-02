@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.view.menu.ActionMenuItemView
@@ -32,6 +33,7 @@ class RecipeListAdapter(private val list: ArrayList<Recipe>, private val context
         var thumbnail = itemView.findViewById<ImageView>(R.id.recipeThumbnail)
         var title = itemView.findViewById<TextView>(R.id.recipeTitle)
         var ingredients = itemView.findViewById<TextView>(R.id.recipeIngredients)
+        var linkButton = itemView.findViewById<Button>(R.id.recipeLinkButton)
 
         fun bindView(recipe: Recipe) {
 
