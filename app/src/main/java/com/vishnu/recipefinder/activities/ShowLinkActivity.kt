@@ -2,6 +2,7 @@ package com.vishnu.recipefinder.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.vishnu.recipefinder.R
 import kotlinx.android.synthetic.main.activity_show_link.*
 
@@ -17,6 +18,10 @@ class ShowLinkActivity : AppCompatActivity() {
             val link = extras.get("link")
             //Invoking WebView
             webViewId.loadUrl(link.toString())
+            finish()
+        } else {
+            Toast.makeText(this, "Invalid Link", Toast.LENGTH_SHORT).show()
+            finish()
         }
     }
 }
