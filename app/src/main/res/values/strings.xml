@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">RecipeFinder</string>
     <string name="Title">What would you like to make?</string>
-    <string name="IngredientsHint">Ingredients: e.g Tomatoes, Cucumber etc.</string>
+    <string name="IngredientsHint">Ingredients: e.g Tomatoes, Milk etc</string>
     <string name="SearchHint">Search term: e.g: Lasagna etc</string>
     <string name="searchButton">Search Recipe</string>
     <string name="LinkButton">Link</string>

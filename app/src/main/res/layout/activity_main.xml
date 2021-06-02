@@ -9,13 +9,14 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="333dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        app:elevation="20dp"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/cardview"
+        app:cardElevation="50dp"
         app:cardCornerRadius="20dp"
-        app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -41,8 +42,8 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:ems="10"
                 android:autofillHints="@string/IngredientsHint"
+                android:ems="10"
                 android:hint="@string/IngredientsHint"
                 android:inputType="textPersonName" />
 
@@ -51,8 +52,8 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:ems="10"
                 android:autofillHints="@string/SearchHint"
+                android:ems="10"
                 android:hint="@string/SearchHint"
                 android:inputType="textPersonName" />
 
