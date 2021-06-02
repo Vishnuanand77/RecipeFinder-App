@@ -59,7 +59,11 @@ class RecipeListAdapter(private val list: ArrayList<Recipe>, private val context
 
             //Link Button onClick
             linkButton.setOnClickListener {
-                var intent = Intent(context, ShowLinkActivity::class.java)
+                val intent = Intent(context, ShowLinkActivity::class.java)
+                intent.putExtra("link", recipe.link.toString()) //Forwarding the recipe url
+
+                //Starting a WebView
+                context.startActivity(intent)
             }
 
             //Card View onClick
