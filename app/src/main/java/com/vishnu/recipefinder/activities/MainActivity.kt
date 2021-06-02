@@ -12,7 +12,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         searchButton.setOnClickListener {
-            startActivity(Intent(this, RecipeList::class.java))
+            val intent = Intent(this, RecipeList::class.java)
+
+            //Getting user input
+            val ingredients = ingredientsEditText.text.toString().trim()
+            val searchTerm = searchTermEditText.text.toString().trim()
+
+            intent.putExtra("ingredients", ingredients)
+            intent.putExtra("search", searchTerm)
+
+            startActivity(intent)
         }
     }
 }
