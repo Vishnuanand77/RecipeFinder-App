@@ -3,6 +3,7 @@ package com.vishnu.recipefinder.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -30,6 +31,10 @@ class RecipeList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recipe_list)
 
+        //Calling the Action Bar
+        //Showing the back button in the Action Bar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         //API URL String
         val url: String?
 
@@ -55,6 +60,16 @@ class RecipeList : AppCompatActivity() {
 
         //Function call to get recipes from API
         getRecipe(url)
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+        }
+        return super.onContextItemSelected(item)
     }
 
     private fun getRecipe(Url: String) {

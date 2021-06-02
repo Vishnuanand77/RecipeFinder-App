@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.RecipeList">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewId"
         android:layout_width="0dp"

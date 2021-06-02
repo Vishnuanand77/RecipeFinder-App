@@ -11,13 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipeFinder"
+        android:fullBackupContent="@android:"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.ShowLinkActivity"></activity>
-        <activity android:name=".activities.RecipeList" />
+        <activity android:name=".activities.ShowLinkActivity">
+        </activity>
+        <activity android:name=".activities.RecipeList" android:parentActivityName=".activities.MainActivity"/>
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
