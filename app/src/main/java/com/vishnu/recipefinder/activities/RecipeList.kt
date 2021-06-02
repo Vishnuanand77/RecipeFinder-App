@@ -24,7 +24,7 @@ class RecipeList : AppCompatActivity() {
     var volleyRequest: RequestQueue? = null //Initializing a request queue variable
     var recipeList: ArrayList<Recipe>? = null //Initializing array list variable
     var recipeListAdapter: RecipeListAdapter? = null //Adapter
-//    var layoutManager: RecyclerView.LayoutManager? = null //LayoutManager
+    var layoutManager: RecyclerView.LayoutManager? = null //LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +37,10 @@ class RecipeList : AppCompatActivity() {
         val ingredientsCheck = extras?.get("ingredients")
         val searchCheck = extras?.get("search")
 
-        if (ingredientsCheck!!.equals("") && searchCheck!!.equals("")) {
+        Log.d("ingredientsCheck ===>", ingredientsCheck.toString())
+        Log.d("searchCheck ===>", searchCheck.toString())
+
+        if (ingredientsCheck!! != "" && searchCheck!! != "") {
             //Construct customized Url
             val tempUrl = LEFT_LINK + ingredientsCheck.toString() + QUERY + searchCheck.toString()
             url = tempUrl
@@ -80,7 +83,7 @@ class RecipeList : AppCompatActivity() {
 
 //                            Instantiating RecipeListAdapter
                             recipeListAdapter = RecipeListAdapter(recipeList!!, this)
-//                            layoutManager = LinearLayoutManager(this)
+                            layoutManager = LinearLayoutManager(this)
 
                             //RecyclerView setup
                             recyclerViewId.layoutManager = LinearLayoutManager(this)
